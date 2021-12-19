@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ImagesApp</string>
+    <string name="popular">Popular</string>
+    <string name="favorites">Favorites</string>
+    <string name="empty" />
+
+    <string name="failed_to_load">Failed to load data!</string>
+    <string name="failed_connection">No network connection!</string>
+</resources>

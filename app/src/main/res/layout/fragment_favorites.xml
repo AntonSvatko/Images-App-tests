@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.test.imagesapp.ui.adapter.ImagesAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.test.imagesapp.ui.fragments.favorites.FavoritesViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/favorites_container"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+
+            android:indeterminateTint="@color/veryDarkGray"
+            android:indeterminateTintMode="src_in"
+            android:maxHeight="6dp"
+            android:minHeight="6dp"
+            app:isProgress="@{viewModel.loading}" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:adapter="@{adapter}"
+            android:id="@+id/favorites_recycler_view"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:photosList="@{viewModel.photosLiveData}"
+            app:spanCount="3" />
+    </LinearLayout>
+
+
+</layout>

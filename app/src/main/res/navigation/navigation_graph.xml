@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/popular">
+
+    <fragment
+        android:id="@+id/favorites"
+        android:name="com.test.imagesapp.ui.fragments.favorites.FavoritesFragment"
+        android:label="Favorite Images">
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailsFragment"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/popular"
+        android:name="com.test.imagesapp.ui.fragments.popular.PopularFragment"
+        android:label="Popular Images">
+        <action
+            android:id="@+id/action_popularFragment_to_detailsFragment"
+            app:destination="@id/details" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        android:name="com.test.imagesapp.ui.fragments.details.DetailsFragment"
+        android:label="Details">
+        <argument
+            android:name="photo"
+            app:argType="com.test.imagesapp.data.model.Photo" />
+    </fragment>
+</navigation>
